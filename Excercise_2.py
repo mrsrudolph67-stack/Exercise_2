@@ -21,42 +21,57 @@ c = 45
 if a > b:
     print ("a is greater than b")
 
-if b % a:
+if b % 2 == 0:
     print ("b is even")
 
 if c <= a:
     print ("c is less than/equal to a")
 
-final_condition = a > b or c <= a
+final_condition = (a > b) or ((c <= a) and (b % 2 == 0))
 
 print (final_condition)
 
 # Question 3
 print ("Question 3")
 
-score = 67
+score = int (input("Enter your score (0 - 100): "))
 
-if score > 90:
+if score >= 90:
     print ("A")
 
-if score > 80:
+elif score >= 80:
     print ("B")
 
-if score > 70:
+elif score >= 70:
     print ("C")
 
-if score > 60:
+elif score >= 60:
     print ("D")
 
-if score < 60:
+elif score < 60:
     print ("F")
 
 # Question 4
 print ("Question 4")
 
-num1 = 89
-num2 = 26
+num1 = float(input("Enter your number: "))
+num2 = float(input ("Enter your number: "))
 
-operation = (num1 * num2)
+operation = (input("Enter an operation (/, *, +, -): "))
 
-print (operation)
+if operation == "+":
+    result = num1 + num2
+elif operation == "-":
+    result = num1 - num2
+elif operation == "/":
+    result = num1 / num2
+    if num2 != 0:
+            result = num1 / num2
+    else:
+            result = "Error: Cannot divide by 0"
+elif operation == "*":
+    result = num1 * num2
+else:
+    result = "Invalid operation"
+
+print (result)
